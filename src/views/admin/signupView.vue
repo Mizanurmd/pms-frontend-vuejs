@@ -75,7 +75,7 @@ const submit = async () => {
   };
   
   try {
-    const response = await axios.post('http://localhost:8082/api/v1/register', user);
+    const response = await axios.post('http://localhost:8081/api/v1/register', user);
     alert('Registration successful!');
     console.log(response.data); // Handle the response as needed
   } catch (error) {
