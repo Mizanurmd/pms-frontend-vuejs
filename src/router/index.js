@@ -5,6 +5,7 @@ import userView from '../views/userDetails/userView.vue'
 import loginView from '../views/admin/loginView.vue'
 import signupView from '../views/admin/signupView.vue'
 import projectCreate from '@/views/Projects/projectCreate.vue'
+import projectEdit from '@/views/Projects/projectEdit.vue'
 
 
 
@@ -49,7 +50,14 @@ const routes = [
     name: 'projectCreate',
     component: projectCreate
    
-  }
+  },
+  {
+    path: '/projects/:id',
+    name: 'ProjectEdit',
+    component: projectEdit
+   
+  },
+  
 
 
 ]

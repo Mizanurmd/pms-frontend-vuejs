@@ -58,7 +58,9 @@
 <script setup>
 import { ref } from 'vue';
 import axios from 'axios';
+import { useRouter } from 'vue-router';
 
+const router = useRouter();
 const username = ref('');
 const email = ref('');
 const role = ref('');
@@ -75,9 +77,10 @@ const submit = async () => {
   };
   
   try {
-    const response = await axios.post('http://localhost:8081/api/v1/register', user);
+    const response = await axios.post('http://localhost:8082/api/v1/register', user);
     alert('Registration successful!');
     console.log(response.data); // Handle the response as needed
+   router.push({ name: 'loginView' });
   } catch (error) {
     alert('Registration failed!');
     console.error(error);

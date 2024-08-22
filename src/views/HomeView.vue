@@ -25,6 +25,9 @@
               <li class="nav-item mb-2">
               <RouterLink class="nav-link" to="/create">Create Project</RouterLink>
             </li>
+             <li class="nav-item mb-2">
+              <RouterLink class="nav-link" to="/projects">Update Project</RouterLink>
+            </li>
               <li class="nav-item mb-2">
                 <RouterLink class="nav-link text-white" to="/userDetails">User</RouterLink>
               </li>

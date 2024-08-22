@@ -45,7 +45,7 @@ const projects = ref([]);
 // Fetch projects from API
 const fetchProjects = async () => {
   try {
-    const response = await axios.get('http://localhost:8081/api/v1/projects/all');
+    const response = await axios.get('http://localhost:8082/api/v1/projects/all');
     projects.value = response.data;
   } catch (error) {
     console.error('Error fetching projects:', error);
@@ -55,7 +55,7 @@ const fetchProjects = async () => {
 // Delete a project
 const deleteProject = async (id) => {
   try {
-    await axios.delete(`http://localhost:8081/api/v1/projects/${id}`);
+    await axios.delete(`http://localhost:8082/api/v1/projects/${id}`);
     fetchProjects(); // Refresh the project list
   } catch (error) {
     console.error('Error deleting project:', error);

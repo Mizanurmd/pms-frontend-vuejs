@@ -29,11 +29,12 @@ const password = ref('');
 const submit = async () => {
   const user = { username: username.value, password: password.value };
   try {
-    const response = await axios.post('http://localhost:8081/api/v1/login', user);
+    const response = await axios.post('http://localhost:8082/api/v1/login', user);
     alert('Login successful!');
     // Save tokens in local storage
-    localStorage.setItem('accessToken', response.data.accessToken);
-    localStorage.setItem('refreshToken', response.data.refreshToken);
+    const token = localStorage.setItem('accessToken', response.data.accessToken);
+     localStorage.setItem('refreshToken', response.data.refreshToken);
+    console.log("Token:", token); // Verify the token format
     // Handle the response, e.g., save tokens, redirect, etc.
     console.log(response.data);
     router.push({ name: 'home' });
